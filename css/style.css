@@ -1,3 +1,49 @@
 body{
-    font-family: 'Bebas Neue', cursive;;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.myContainer{
+    background-color: antiquewhite;
+}
+
+.myBorder{
+    border: 3px solid red;
+}
+
+.font-24{
+    font-size: 24px;
+}
+
+.font-18{
+    font-size: 18px;
+}
+
+.aboutFontSize{
+    font-size: 22px;
+}
+
+.aboutContainer{
+    background-color: #00fa9a;
+}
+
+.marginTop-50{
+    margin-top: 65px;
+}
+
+.myNavBar{
+    position: sticky;
+    top: 0;
+}
+
+.educationContainer{
+    background-color: rgb(146, 255, 255);
+    background-size: 100%;
+}
+
+.myCardBackground{
+    background-color: rgba(75, 160, 160, 0.3);
+}
+
+.textColorBlue{
+    color: rgb(6, 21, 224);
 }
