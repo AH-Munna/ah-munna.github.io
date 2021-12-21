@@ -3,7 +3,7 @@ body{
 }
 
 .myContainer{
-    background: url(https://images.pexels.com/photos/2061168/pexels-photo-2061168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background: url("/img/slideBackground.jpeg");
     background-size: 100%;
     background-repeat: no-repeat;
 }
@@ -37,17 +37,13 @@ body{
     top: 0;
 }
 
-.noDecoration{
-    text-decoration: none;
-}
-
 .educationContainer{
     background-color: rgb(146, 255, 255);
     background-size: 100%;
 }
 
 .myNameBackground{
-    background: url(https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background: url(/img/textBackground.jpeg);
     transition: transform .2s;
 }
 .myNameBackground:hover{
