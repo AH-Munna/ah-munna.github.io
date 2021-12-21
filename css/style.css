@@ -38,8 +38,7 @@ body{
 }
 
 .educationContainer{
-    background-color: rgb(146, 255, 255);
-    background-size: 100%;
+    background: url("/img/educationBackground.jpg");
 }
 
 .myNameBackground{
@@ -50,8 +49,17 @@ body{
     transform: scale(1.1);
 }
 
-.myCardBackground{
-    background-color: rgba(75, 160, 160, 0.452);
+.myCardBackground1{
+    background-color: rgba(75, 160, 160, 0.575);
+}
+
+.myCardBackground2{
+    background-color: rgba(75, 160, 160, 0.164);
+}
+
+.rounded-circle{
+    width: 200px;
+    height: 200px;
 }
 
 .textColorBlue{

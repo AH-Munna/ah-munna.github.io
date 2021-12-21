@@ -20,8 +20,44 @@
 </head>
 
 <body>
+  <!-- navBar section -->
+  <nav class="navbar myNavBar navbar-expand-lg navbar-dark bg-dark font-24 p-2" id="navBar">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link mx-1" aria-current="page" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-1" aria-current="page" href="#about">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-1" href="#altEducation">EDUCATION</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-1" aria-current="page" href="#project">PROJECT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-1" href="#portfolio">PORTFOLIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-1" aria-current="page" href="#gallery">GALLERY</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-1" href="#contact">CONTACT</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Home section -->
   <div class="container-fluid myContainer">
-    <div class="container-lg p-lg-5 p-md-3">
+    <div class="container-lg p-md-1 shadow">
       <div class="row">
         <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
@@ -79,50 +115,10 @@
           </button>
         </div>
       </div>
-      <!-- 2nd row for text below -->
-      <!-- <div class="row">
-        <div class="col-md-9 bg-secondary m-auto w-50 p-2 border border-light">
-          <h1 class="text-white display-4 text-center font-weight-bold">Ahsanul Haque Munna</h1>
-          <h3 class="text-center text-white">Full Stack Web Developer</h3>
-        </div>
-      </div> -->
     </div>
   </div>
 
-  <!-- navBar section -->
-  <nav class="navbar myNavBar navbar-expand-lg navbar-dark bg-dark font-24 p-2" id="navBar">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link mx-1" aria-current="page" href="#">HOME</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-1" aria-current="page" href="#about">ABOUT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-1" href="#education">EDUCATION</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-1" aria-current="page" href="#project">PROJECT</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-1" href="#portfolio">PORTFOLIO</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-1" aria-current="page" href="#gallery">GALLERY</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-1" href="#contact">CONTACT</a>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+  
   <!-- about section -->
   <div class="aboutContainer container-fluid" id="about">
     <div class="container text-white">
@@ -135,9 +131,12 @@
             pariatur nostrum?</p><br>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum neque dolore beatae mollitia eaque rerum
             aliquid dicta quam magni nisi.</p><br>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quo velit provident optio reprehenderit dolores autem, veritatis error ratione repellendus blanditiis ab placeat ipsa, itaque non illo earum dignissimos, sequi repellat eius excepturi incidunt eum! Praesentium, laudantium maxime, vero facere repudiandae incidunt temporibus ullam, possimus quas voluptatum expedita reiciendis dolor!</p><br>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est quo velit provident optio reprehenderit
+            dolores autem, veritatis error ratione repellendus blanditiis ab placeat ipsa, itaque non illo earum
+            dignissimos, sequi repellat eius excepturi incidunt eum! Praesentium, laudantium maxime, vero facere
+            repudiandae incidunt temporibus ullam, possimus quas voluptatum expedita <b id="altEducation"></b> reiciendis dolor!</p><br>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 mx-auto mb-3" style="width: 250px;">
           <img class="img-fluid border border-light rounded-circle" width="100%"
             src="/img/profilePic-removebg-preview.png" alt="Ahsanul Haque profile pic">
         </div>
@@ -146,21 +145,24 @@
     </div>
   </div>
 
+  <div class="header border border-info py-3 text-white text-center"
+    style="background-color: rgba(29, 12, 104, 0.514);">
+    <h1><b>Education</b></h1>
+  </div>
+
   <div class="container-fluid educationContainer">
     <div class="container" id="education">
-      <div class="header pt-5 textColorBlue text-center">
-        <h1><b>Education</b></h1>
-      </div>
       <div class="row p-5">
-        <div class="col-md-3 mt-2">
-          <div class="border rounded-circle myCardBackground text-center shadow-lg border-info p-2 textColorBlue">
-            <h3 class="card-title mt-5"><b>Jan, 2014</b></h3>
+        <div class="col-xl-3 mt-2">
+          <div
+            class="border mx-auto mt-3 rounded-circle myCardBackground1 text-center shadow-lg border-info p-2 textColorBlue">
+            <h3 class="card-title mt-4"><b>Jan, 2014</b></h3>
             <h3 class="card-text">to</h3>
-            <h3 class="card-title mb-5"><b>Dec, 2016</b></h3>
+            <h3 class="card-title"><b>Dec, 2016</b></h3>
           </div>
         </div>
-        <div class="col-md-9 mt-5">
-          <div class="myCardBackground textColorBlue font-18 border border-info p-2 shadow-lg">
+        <div class="col-xl-9 mt-5">
+          <div class="myCardBackground2 textColorBlue font-18 border border-info p-2 shadow-lg">
             <h3><b>Bangladesh Air Force Shaheen College</b></h3>
             <p>Bangladesh Air Force Shaheen College, or BAF Shaheen College, is a privatised educational institution run
               by the Bangladesh Air Force in different airbases around Bangladesh. It has the largest primary, secondary
@@ -169,20 +171,20 @@
         </div>
       </div>
       <div class="row p-5">
-        <div class="col-md-3 mt-2">
-          <div class="border rounded-circle myCardBackground text-center shadow-lg border-info p-2 textColorBlue">
-            <h3 class="card-title mt-5"><b>Jan, 2017</b></h3>
+        <div class="col-xl-3 mt-3">
+          <div
+            class="border mx-auto mt-2 rounded-circle myCardBackground1 text-center shadow-lg border-info p-2 textColorBlue">
+            <h3 class="card-title mt-4"><b>Jan, 2017</b></h3>
             <h3 class="card-text">to</h3>
-            <h3 class="card-title mb-5"><b>Dec, 2021</b></h3>
+            <h3 class="card-title"><b>Dec, 2021</b></h3>
           </div>
         </div>
-        <div class="col-md-9 mt-5">
-          <div class="myCardBackground textColorBlue font-18 border border-info p-2 shadow-lg">
+        <div class="col-xl-9 mt-5">
+          <div class="myCardBackground2 textColorBlue font-18 border border-info p-2 shadow-lg">
             <h3><b>Asian University of Bangladesh</b></h3>
             <p>Asian University of Bangladesh or AUB is a private university in Bangladesh. It was established on 4
               January 1996 by the Private University Act 1992. The AUB permanent campus is at Ashulia. The university is
-              affiliated by University Grants Commission. The university has been without a vice-chancellor since 2012
-              with Abul Hasan M Sadeq as the acting vice-chancellor.</p>
+              affiliated by University Grants Commission.</p>
           </div>
         </div>
       </div>
