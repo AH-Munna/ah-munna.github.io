@@ -3,7 +3,9 @@ body{
 }
 
 .myContainer{
-    background-color: antiquewhite;
+    background: url(https://images.pexels.com/photos/2061168/pexels-photo-2061168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .myBorder{
@@ -23,7 +25,7 @@ body{
 }
 
 .aboutContainer{
-    background-color: #00fa9a;
+    background-color: #00442a;
 }
 
 .marginTop-50{
@@ -35,13 +37,25 @@ body{
     top: 0;
 }
 
+.noDecoration{
+    text-decoration: none;
+}
+
 .educationContainer{
     background-color: rgb(146, 255, 255);
     background-size: 100%;
 }
 
+.myNameBackground{
+    background: url(https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    transition: transform .2s;
+}
+.myNameBackground:hover{
+    transform: scale(1.1);
+}
+
 .myCardBackground{
-    background-color: rgba(75, 160, 160, 0.3);
+    background-color: rgba(75, 160, 160, 0.452);
 }
 
 .textColorBlue{
