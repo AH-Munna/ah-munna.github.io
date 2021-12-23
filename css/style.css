@@ -35,6 +35,7 @@ body{
 .myNavBar{
     position: sticky;
     top: 0;
+    z-index: 9;
 }
 
 .educationContainer{
@@ -47,6 +48,13 @@ body{
 }
 .myNameBackground:hover{
     transform: scale(1.1);
+}
+
+.projectHover{
+    transition: transform .2s;
+}
+.projectHover:hover{
+    transform: scale(1.2);
 }
 
 .myCardBackground1{
@@ -64,4 +72,16 @@ body{
 
 .textColorBlue{
     color: rgb(6, 21, 224);
+}
+
+.projectBackground{
+    background-color: #354664;
+}
+
+.myLightGreen{
+    color: rgb(86, 255, 114);
+}
+
+.contactBackground{
+    background-color: rgb(27, 26, 36);
 }
