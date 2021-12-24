@@ -85,3 +85,22 @@ body{
 .contactBackground{
     background-color: rgb(27, 26, 36);
 }
+
+.faIcons{
+    font-size: 54px;
+    display: inline-block;
+    transition: transform .2s;
+}
+
+.faIcons:hover{
+    transform: scale(1.2);
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
