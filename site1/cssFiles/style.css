@@ -1,0 +1,39 @@
+body {
+    font-family: 'Over the Rainbow', cursive;
+    background-color: rgb(46, 46, 46);
+}
+
+a {
+    text-decoration: none;
+}
+
+.listItems {
+    display: block;
+    align-items: center;
+    aspect-ratio: 16/9;
+    background-color: rgba(107, 74, 74, 0.5);
+    border: 2px solid rgb(133, 133, 136);
+}
+
+.listItemColor {
+    color: rgb(169, 255, 255);
+}
+
+.fSize-18 {
+    font-size: 20px;
+}
+
+.myBorder {
+    top: 0;
+    min-height: 350px;
+    position: sticky;
+    height: fit-content;
+    border: 5px solid rgb(133, 133, 136);
+}
+
+@media only screen and (max-width: 991px) {
+    .listItems {
+      max-width: 350px;
+      margin: auto;
+    }
+  }
