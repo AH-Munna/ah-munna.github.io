@@ -18,12 +18,6 @@ function getDataJson() {
         .catch(err => console.log(err));
 }
 
-
-let func1 = param1 => {
-    console.log();
-}
-
-
 //syncronus asyncronus
 //sync
 /*
@@ -77,7 +71,10 @@ func1().then(func2).catch(function (err) {
 function fromExternal() {
     let number = prompt("how many jokes:");
     let myXHR = new XMLHttpRequest();
-    myXHR.open("GET", `http://api.icndb.com/jokes/random/${number}`, true);
+    myXHR.open("GET", `https://api.icndb.com/jokes/random/${number}`, true);
+    myXHR.onprogress = function(){
+        writeSomething("getting your jokes");
+    };
 
     myXHR.onload = function () {
         if (this.status == 200) {
