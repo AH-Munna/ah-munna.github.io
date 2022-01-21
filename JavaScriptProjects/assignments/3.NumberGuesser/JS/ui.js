@@ -10,7 +10,7 @@ class UI {
 
     static showRules() {
         let ruleUI = document.createElement('div');
-        ruleUI.innerHTML = `<ul><li>the correct answer will be a number between ${minValue} and ${maxValue}</li><li>you will have 3 chances of guessing the correct answer</li><li>hints will be given for guessing wrong</li><li>the correct answer will be shown if:<ul><li>out of tries</li><li>forfeited</li></ul></li><li>Enjoy</li></ul>`
+        ruleUI.innerHTML = `<ul><li>the correct answer will be a number between ${minValue} and ${maxValue}</li><li>you will have 3 chances of guessing the correct answer</li><li>hints will be given for guessing wrong</li><li>the correct answer will be shown if:<ul><li>out of tries</li><li>forfeited</li></ul></li><li>Enjoy</li><li>also check console if you want to see correct answer</li></ul>`
 
         ruleUI.id = 'rules'
         ruleUI.className = 'shadow p-3'

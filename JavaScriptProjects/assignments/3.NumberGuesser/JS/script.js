@@ -63,11 +63,12 @@ document.getElementById('btnQuit').addEventListener("click", function() {
 
 document.getElementById('btnCheck').addEventListener('click', function() {
     let inputNumber = document.getElementById('numInput').value;
-    inputNumber = parseInt(inputNumber); maxValue = parseInt(maxValue); minValue = parseInt(minValue);
+    maxValue = parseInt(maxValue); minValue = parseInt(minValue);
   
-    if (inputNumber === "" || (inputNumber > maxValue) || (inputNumber < minValue)) {
+    if (inputNumber == "" || (inputNumber > maxValue) || (inputNumber < minValue)) {
         UI.toastMessage(`The number can't be empty or out of bounds(${minValue}-${maxValue})`, "error")
     } else {
+        inputNumber = parseInt(inputNumber);
         document.getElementById('leftTries').textContent = `Try Left: ${tryLeft--}`;
 
         document.getElementById('numInput').value = '';
@@ -83,14 +84,12 @@ document.getElementById('btnCheck').addEventListener('click', function() {
             if(correctAnswer == inputNumber) {
                 UI.toastMessage(`Congrats! you have guessed correctly in ${2-tryLeft} tries`, "success");
                 UI.gameStart(false);
-                console.log(correctAnswer);
             } else if(correctAnswer > inputNumber) {
                 UI.toastMessage("Try larger number", "bg-info");
-                console.log(correctAnswer);
             } else {
                 UI.toastMessage("Try smaller number", "bg-info");
-                console.log(correctAnswer);
             }
+            console.log("The correct answer: " + correctAnswer);
         }
     }
 });
