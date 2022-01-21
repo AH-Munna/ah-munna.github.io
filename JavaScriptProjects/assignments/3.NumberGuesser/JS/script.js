@@ -57,7 +57,7 @@ document.getElementById('btnRules').addEventListener('click',function() {
 });
 
 document.getElementById('btnQuit').addEventListener("click", function() {
-    UI.toastMessage(`game ended`, "error");
+    UI.toastMessage(`game ended! correct answer was: ${correctAnswer}`, "error");
     UI.gameStart(false);
 });
 
