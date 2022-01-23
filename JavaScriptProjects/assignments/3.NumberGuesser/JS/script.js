@@ -17,7 +17,7 @@ document.getElementById('admin').addEventListener('click', function() {
     UI.gameStart(false);
     let m = parseInt(prompt("max:"));
     let n = parseInt(prompt("min"));
-    if(m<n || m=="" || n=="") {
+    if(m<n || isNaN(m) || isNaN(n)) {
         alert("invlid! not changed");
     } else {
         onMinMaxChange(m, n);
