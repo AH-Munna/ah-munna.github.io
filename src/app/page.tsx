@@ -12,12 +12,15 @@ import GlitchButton from "./components/hacker/GlitchButton";
 import IntroOverlay from "./components/hacker/IntroOverlay";
 import Starfield from "./components/hacker/Starfield";
 import Terminal from "./components/hacker/Terminal";
+import GameOverlay from "./components/hacker/games/GameOverlay";
+import SnakeGame from "./components/hacker/games/SnakeGame";
 
 export default function Home() {
   const [showTerminal, setShowTerminal] = useState(false);
   const [hasTriggered, setHasTriggered] = useState(false);
   const [isHackerMode, setIsHackerMode] = useState(false);
   const [showDevIntro, setShowDevIntro] = useState(false);
+  const [activeGame, setActiveGame] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,12 +56,21 @@ export default function Home() {
       {isHackerMode && (
           <>
             <Starfield />
-            {!showTerminal && <GlitchButton onClick={() => setShowTerminal(true)} />}
+            {!showTerminal && !activeGame && <GlitchButton onClick={() => setShowTerminal(true)} />}
           </>
       )}
 
       {showTerminal && (
-         <Terminal onClose={() => setShowTerminal(false)} />
+         <Terminal 
+            onClose={() => setShowTerminal(false)} 
+            onLaunchGame={(game) => setActiveGame(game)}
+         />
+      )}
+
+      {activeGame === 'snake' && (
+          <GameOverlay title="SNAKE.EXE" onClose={() => setActiveGame(null)}>
+              <SnakeGame />
+          </GameOverlay>
       )}
 
       <ScrollNavigation />

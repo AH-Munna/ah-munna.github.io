@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 
 interface TerminalProps {
   onClose: () => void;
+  onLaunchGame: (game: string) => void;
 }
 
 interface CommandHistory {
@@ -13,7 +14,7 @@ interface CommandHistory {
   content: React.ReactNode;
 }
 
-export default function Terminal({ onClose }: TerminalProps) {
+export default function Terminal({ onClose, onLaunchGame }: TerminalProps) {
   const [history, setHistory] = useState<CommandHistory[]>([]);
   const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -70,7 +71,7 @@ export default function Terminal({ onClose }: TerminalProps) {
                 <span>Execute as superuser (usage: sudo hire_munna)</span>
                 
                 <button onClick={() => handleCommand('game')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">game</button>
-                <span>Launch simulation (Phase 2)</span>
+                <span>List available games</span>
 
                 <button onClick={() => handleCommand('help')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">
                         help
@@ -92,7 +93,7 @@ export default function Terminal({ onClose }: TerminalProps) {
               <button onClick={() => handleCommand('cat web_skills.txt')} className="hover:underline hover:text-cyan-300">web_skills.txt</button>
               <button onClick={() => handleCommand('cat automation_suite.py')} className="hover:underline hover:text-cyan-300">automation_suite.py</button>
               <button onClick={() => handleCommand('cat contact.txt')} className="hover:underline hover:text-cyan-300">contact.txt</button>
-              <button onClick={() => handleCommand('game')} className="text-red-500 hover:underline hover:text-red-400">game.exe</button>
+              <button onClick={() => handleCommand('snake')} className="text-green-500 hover:underline hover:text-green-400 font-bold">snake.exe</button>
               <button onClick={() => handleCommand('help')} className="text-green-500 hover:underline hover:text-green-400">
                         help
                     </button>
@@ -137,11 +138,32 @@ export default function Terminal({ onClose }: TerminalProps) {
         }, 1000);
         break;
       case 'game':
-      case './game.exe':
         newHistory.push({
           type: 'output',
-          content: <span className="text-yellow-400">Error 404: Game Module Not Found. (Coming in Phase 2)</span>
+          content: (
+             <div className="text-zinc-300">
+               <p>Available Games:</p>
+               <ul className="list-disc ml-4 mt-2">
+                 <li>
+                   <button onClick={() => handleCommand('snake')} className="text-green-500 hover:underline hover:text-green-400 font-bold">snake.exe</button>
+                   <span className="text-zinc-500 ml-2">- Classic Snake Game</span>
+                 </li>
+               </ul>
+             </div>
+          )
         });
+        break;
+      case 'snake':
+      case 'snake.exe':
+      case './snake.exe':
+        newHistory.push({
+          type: 'output',
+          content: <span className="text-green-500">Launching snake.exe...</span>
+        });
+        setTimeout(() => {
+             onLaunchGame('snake');
+             onClose(); // Close terminal when launching game
+        }, 800);
         break;
       case 'clear':
         setHistory([]);

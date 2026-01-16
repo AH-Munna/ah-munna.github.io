@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AH Munna | Full Stack Developer & Automation Engineer
 
-## Getting Started
+**Portfolio V2**: A Next.js 15 powered cyberpunk showcase featuring an interactive terminal, hidden gamer modes, and high-performance animations.
 
-First, run the development server:
+## 🚀 Live Demo
+[https://ah-munna.github.io](https://ah-munna.github.io)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🛠️ Tech Stack
+This project was built to demonstrate modern web capabilities and creative engineering:
+*   **Framework**: Next.js 15 (App Router)
+*   **Styling**: Tailwind CSS v4 (Alpha)
+*   **Animations**: Framer Motion & HTML5 Canvas
+*   **Language**: TypeScript
+*   **Deployment**: GitHub Pages
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🕹️ Hacker Mode Features
+Beyond the standard portfolio sections, this site includes a hidden engagement layer:
+1.  **Developer Terminal**: Accessed by finding the glitch trigger. Supports `ls`, `cat`, and `sudo` commands.
+2.  **Snake.exe**: A fully functional, responsive Snake game built from scratch using React & Canvas.
+    *   **Features**: Dynamic speed scaling, High score tracking, Mobile D-Pad & Swipe controls.
+    *   **Tech**: Custom game loop engine with 60fps rendering.
+3.  **Warp Speed Starfield**: An optimized particle system (Canvas) that scales performance based on device capabilities (150 stars on Desktop, 50 on Mobile).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# 👨‍💻 Engineer Profile: Ahsanul Haque Munna
 
-## Learn More
+I am a software engineer who loves to build. Whether it's a SaaS platform, a physics-based game, or an automation script that doubles a client's revenue—I find joy in solving problems with code.
 
-To learn more about Next.js, take a look at the following resources:
+### 💼 Experience
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Independent Software Developer** (June 2024 – Present)
+*   Engineered **Vampire Space Survivor**, a Godot-based simulation game focusing on complex state management and AI behavior trees.
+*   Developed **Python Automation Suites** for marketing clients, reducing manual workflows by 80% and doubling revenue.
+*   Conducted R&D on **Large Language Models (LLMs)**, building autonomous conversational AI systems.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Full Stack Web Developer @ Nexis Limited** (Mar 2023 – June 2024)
+*   Led development of enterprise **HRM and School Management Systems** using Django and Next.js.
+*   Designed scalable database schemas (PostgreSQL) and implemented role-based security protocols.
+*   Mentored junior developers and managed agile sprint goals as Team Lead.
 
-## Deploy on Vercel
+**Frontend Developer Intern @ Nexis Limited** (Dec 2022 – Feb 2023)
+*   Developed responsive interfaces using Next.js and Tailwind CSS.
+*   Integrated REST APIs and learned professional version control standards.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 🛠️ Technical Arsenal
+*   **Core**: Python, JavaScript/TypeScript
+*   **Web**: Next.js, React, Django, Tailwind CSS, SQL
+*   **Mobile**: React Native (Intermediate)
+*   **Game Dev**: Godot Engine, GDScript, Physics Engines
+*   **AI/Automation**: LLM Integration, PyAutoGUI, Playwright
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 📬 Contact
+*   **Email**: ahmunna.developer@gmail.com
+*   **GitHub**: [AH-Munna](https://github.com/AH-Munna)
+*   **Status**: Ready to Deploy 🟢
