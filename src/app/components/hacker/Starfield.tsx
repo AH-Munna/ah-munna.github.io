@@ -21,22 +21,24 @@ export default function Starfield() {
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
-      
-      // Re-init stars if needed, or just let them loop
-      if (stars.length === 0) {
-        stars = Array.from({ length: 400 }, () => ({
-            x: Math.random() * width - width / 2,
-            y: Math.random() * height - height / 2,
-            z: Math.random() * width,
-            pz: 0 // previous z
-        }));
-      }
+      // Stars will be re-initialized in the update loop if needed
     };
 
     const update = () => {
       const isMobile = width < 768;
-      const speed = isMobile ? 2.5 : 8; // 10x slower for mobile (25/10), 3x slower for desktop (25/3)
+      const speed = isMobile ? 1 : 4; 
+      const count = isMobile ? 50 : 150;
       
+      // Re-init stars if count mismatches (e.g. resize or initial load)
+      if (stars.length !== count) {
+          stars = Array.from({ length: count }, () => ({
+            x: Math.random() * width - width / 2,
+            y: Math.random() * height - height / 2,
+            z: Math.random() * width,
+            pz: 0 
+        }));
+      }
+
       // Fill background
       ctx.fillStyle = "rgba(0, 0, 0, 0.4)"; // Trail effect
       ctx.fillRect(0, 0, width, height);
@@ -66,18 +68,6 @@ export default function Starfield() {
         ctx.beginPath();
         ctx.arc(sx, sy, r > 0 ? r : 0, 0, 2 * Math.PI);
         ctx.fill();
-
-        // Optional: Draw trail
-        /*
-        const psx = cx + (star.x / star.pz) * width;
-        const psy = cy + (star.y / star.pz) * width;
-        ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
-        ctx.lineWidth = r;
-        ctx.beginPath();
-        ctx.moveTo(psx, psy);
-        ctx.lineTo(sx, sy);
-        ctx.stroke();
-        */
       }
 
       requestAnimationFrame(update);
