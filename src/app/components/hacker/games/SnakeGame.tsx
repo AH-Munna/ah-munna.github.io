@@ -4,8 +4,8 @@ import { ArrowDown, ArrowLeft, ArrowRight, ArrowUp, RefreshCw, Trophy } from 'lu
 import { useEffect, useRef, useState } from 'react';
 
 const GRID_SIZE = 40; // 40x40 grid (half size boxes)
-const INITIAL_SPEED = 100; // Starting speed ms
-const MIN_SPEED = 50; // Max speed cap (200% faster)
+const INITIAL_SPEED = 150; // Slower start (was 100)
+const MIN_SPEED = 40; // Cap
 
 type Point = { x: number; y: number };
 type Direction = 'UP' | 'DOWN' | 'LEFT' | 'RIGHT';
@@ -30,6 +30,14 @@ export default function SnakeGame() {
     const stored = localStorage.getItem('snake_highscore');
     if (stored) setHighScore(parseInt(stored));
   }, []);
+
+  // Speed Scaling: 5% faster every 2 points to make it noticeable but manageable
+  useEffect(() => {
+     if (score === 0) return;
+     if (score % 2 === 0) {
+        setSpeed(prev => Math.max(MIN_SPEED, Math.floor(prev * 0.95))); 
+     }
+  }, [score]);
 
   const spawnFood = () => {
     const newFood = {
@@ -131,7 +139,7 @@ export default function SnakeGame() {
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Grid Lines (Subtle)
-      ctx.strokeStyle = '#111111';
+      ctx.strokeStyle = '#000000';
       ctx.lineWidth = 1;
       for (let i = 0; i <= GRID_SIZE; i++) {
           ctx.beginPath();
@@ -257,9 +265,9 @@ export default function SnakeGame() {
         >
             <canvas 
                 ref={canvasRef}
-                width={400} // Responsive logic via CSS scale if needed, but keeping simple fixed logic internal, scaled via CSS
-                height={400}
-                className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] "
+                width={600} 
+                height={600}
+                className="w-[345px] h-[345px] md:w-[600px] md:h-[600px]" 
             />
             
             {/* Start / Game Over Overlay */}
