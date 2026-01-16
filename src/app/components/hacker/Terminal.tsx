@@ -58,17 +58,26 @@ export default function Terminal({ onClose }: TerminalProps) {
           type: 'output',
           content: (
             <div className="space-y-1 text-zinc-300">
-              <p>Available commands:</p>
+              <p>Available commands (or click to execute):</p>
               <div className="grid grid-cols-[100px_1fr] gap-2">
-                <span className="text-green-400">ls</span>
+                <button onClick={() => handleCommand('ls')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">ls</button>
                 <span>List directory contents</span>
-                <span className="text-green-400">cat</span>
+                
+                <button onClick={() => handleCommand('cat contact.txt')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">cat</button>
                 <span>Read file content (usage: cat [filename])</span>
-                <span className="text-green-400">sudo</span>
+                
+                <button onClick={() => handleCommand('sudo hire_munna')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">sudo</button>
                 <span>Execute as superuser (usage: sudo hire_munna)</span>
-                <span className="text-green-400">game</span>
+                
+                <button onClick={() => handleCommand('game')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">game</button>
                 <span>Launch simulation (Phase 2)</span>
-                <span className="text-green-400">clear</span>
+
+                <button onClick={() => handleCommand('help')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">
+                        help
+                </button>
+                <span>lists available commands</span>
+                
+                <button onClick={() => handleCommand('clear')} className="text-left text-green-400 hover:underline hover:text-green-300 transition-colors">clear</button>
                 <span>Clear terminal</span>
               </div>
             </div>
@@ -80,10 +89,13 @@ export default function Terminal({ onClose }: TerminalProps) {
           type: 'output',
           content: (
             <div className="flex gap-4 text-cyan-400 font-bold flex-wrap">
-              <span>web_skills.txt</span>
-              <span>automation_suite.py</span>
-              <span>contact.txt</span>
-              <span className="text-red-500">game.exe</span>
+              <button onClick={() => handleCommand('cat web_skills.txt')} className="hover:underline hover:text-cyan-300">web_skills.txt</button>
+              <button onClick={() => handleCommand('cat automation_suite.py')} className="hover:underline hover:text-cyan-300">automation_suite.py</button>
+              <button onClick={() => handleCommand('cat contact.txt')} className="hover:underline hover:text-cyan-300">contact.txt</button>
+              <button onClick={() => handleCommand('game')} className="text-red-500 hover:underline hover:text-red-400">game.exe</button>
+              <button onClick={() => handleCommand('help')} className="text-green-500 hover:underline hover:text-green-400">
+                        help
+                    </button>
             </div>
           )
         });
@@ -96,6 +108,9 @@ export default function Terminal({ onClose }: TerminalProps) {
               <p>Email: ahmunna.developer@gmail.com</p>
               <p>Location: Bangladesh (Remote Available)</p>
               <p>Status: <span className="text-green-500">Ready to Deploy</span></p>
+              <button onClick={() => handleCommand('help')} className="text-green-500 hover:underline hover:text-green-400">
+                        help
+                    </button>
             </div>
           )
         });
@@ -135,12 +150,26 @@ export default function Terminal({ onClose }: TerminalProps) {
          if (trimmedCmd.startsWith('cat')) {
             newHistory.push({
               type: 'output',
-              content: <span className="text-red-400">File not found. Try 'ls' to see available files.</span>
+              content: (
+                <div>
+                    <span className="text-red-400">File not found. Try 'ls' to see available files.</span>
+                    <button onClick={() => handleCommand('help')} className="ml-2 px-2 py-0.5 border border-green-500/50 rounded text-green-400 text-xs hover:bg-green-500/20">
+                        Help
+                    </button>
+                </div>
+              )
             });
          } else {
             newHistory.push({
             type: 'output',
-            content: <span className="text-red-400">Command not found: {cmd}. Type 'help' for assistance.</span>
+            content: (
+                <div>
+                    <span className="text-red-400">Command not found: {cmd}.</span>
+                    <button onClick={() => handleCommand('help')} className="ml-2 px-2 py-0.5 border border-green-500/50 rounded text-green-400 text-xs hover:bg-green-500/20">
+                        Help
+                    </button>
+                </div>
+            )
             });
          }
     }
@@ -160,9 +189,9 @@ export default function Terminal({ onClose }: TerminalProps) {
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-2 md:p-4"
     >
-      <div className="w-full max-w-2xl h-[500px] bg-black/90 border border-green-500/30 rounded-lg shadow-[0_0_30px_rgba(0,255,0,0.1)] flex flex-col font-mono overflow-hidden">
+      <div className="w-full max-w-[95vw] md:max-w-2xl h-[500px] bg-black/90 border border-green-500/30 rounded-lg shadow-[0_0_30px_rgba(0,255,0,0.1)] flex flex-col font-mono overflow-hidden">
         {/* Header */}
         <div className="h-8 bg-zinc-900 border-b border-green-500/20 flex items-center justify-between px-3">
           <div className="text-xs text-zinc-500 flex items-center gap-2">

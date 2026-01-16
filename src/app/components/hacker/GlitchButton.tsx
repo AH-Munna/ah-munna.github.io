@@ -15,11 +15,11 @@ export default function GlitchButton({ onClick }: GlitchButtonProps) {
       animate={{ 
           opacity: 1, 
           scale: 1,
-          y: [0, -20, 0, 20, 0], // Float up and down
+          y: [0, -window.innerHeight * 0.8, 0], // Move up ~80% of screen and back
       }}
       transition={{ 
           opacity: { duration: 0.5 },
-          y: { duration: 8, repeat: Infinity, ease: "easeInOut" } // Slow float
+          y: { duration: 30, repeat: Infinity, ease: "linear" } // 30s full cycle
       }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}

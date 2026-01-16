@@ -7,38 +7,56 @@ import Experience from "./components/Experience";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import ScrollNavigation from "./components/ScrollNavigation";
+import DeveloperModeIntro from "./components/hacker/DeveloperModeIntro";
 import GlitchButton from "./components/hacker/GlitchButton";
 import IntroOverlay from "./components/hacker/IntroOverlay";
+import Starfield from "./components/hacker/Starfield";
 import Terminal from "./components/hacker/Terminal";
 
 export default function Home() {
   const [showTerminal, setShowTerminal] = useState(false);
-  const [showTrigger, setShowTrigger] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
+  const [isHackerMode, setIsHackerMode] = useState(false);
+  const [showDevIntro, setShowDevIntro] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
+       if (hasTriggered) return; // Only trigger once
+
        const projectsSection = document.getElementById('projects');
        if (projectsSection) {
          const rect = projectsSection.getBoundingClientRect();
-         // If projects section is visible or we have passed it
+         // If projects section is visible
          if (rect.top < window.innerHeight && rect.bottom >= 0) {
-            setShowTrigger(true);
+            setHasTriggered(true);
+            setShowDevIntro(true);
          }
        }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [hasTriggered]);
 
   return (
-    <main className="min-h-screen bg-black overflow-x-hidden selection:bg-cyan-500/30">
+    <main className="min-h-screen bg-transparent relative z-10 overflow-x-hidden selection:bg-cyan-500/30">
       <IntroOverlay />
       
-      {/* Hacker Mode Elements */}
-      {showTrigger && !showTerminal && (
-         <GlitchButton onClick={() => setShowTerminal(true)} />
+      {/* Hacker Mode Transition & Elements */}
+      {showDevIntro && (
+        <DeveloperModeIntro onComplete={() => {
+            setShowDevIntro(false);
+            setIsHackerMode(true);
+        }} />
       )}
+
+      {isHackerMode && (
+          <>
+            <Starfield />
+            {!showTerminal && <GlitchButton onClick={() => setShowTerminal(true)} />}
+          </>
+      )}
+
       {showTerminal && (
          <Terminal onClose={() => setShowTerminal(false)} />
       )}
